@@ -36,3 +36,16 @@ def factorial(n):
         return 1
     else:
         return n * factorial(n-1)
+
+def FNS(n):
+    mks = []
+    factor = 2
+    while n > 1:
+        print(n, factor, n % factor, n // factor)
+        if factor == 2:
+            mks.append(str(1))
+        else:
+            mks.append(str(n%factor))
+        n = n//factor
+        factor += 1
+    return ''.join(mks[::-1])
