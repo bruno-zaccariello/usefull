@@ -87,3 +87,11 @@ def decimal_sequence(d, number):
                 repeating = repeating[i:]
                 break
     return repeating
+
+def to_binary(dec):
+    ans = []
+    while dec > 1:
+        dec, bin = divmod(dec, 2)
+        ans.append(bin)
+    ans = '1' + ''.join(str(x) for x in ans[::-1])
+    return ans

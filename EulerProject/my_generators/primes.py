@@ -11,8 +11,8 @@ def is_prime(n):
     else:
         return False
 
-def gen_primes(limit=None):
-    num = 1
+def gen_primes(limit=None, start=1):
+    num = start
     while True:
         if limit and num > limit:
             break
