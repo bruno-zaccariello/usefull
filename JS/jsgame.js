@@ -26,21 +26,20 @@ function makeMove(button) {
     var list = positions[0]
     var index = grid[list].length
 
+    var invalid = false
     while (grid[list][index] != 0) {
         index--
+        if (index < 0) { invalid = true; break }
     }
+
+    if (invalid) { alert('Movimento Inválido') } else {
     grid[list][index] = turn
     $('[pos="'+ list + ':' + index +'"]').css('background-color', turn)
     changeTurn()
-}
-
-function checkEnd() {
-    for (var list = 0; list < grid.length; list++) {
-        for (var item = (grid[list].length); item > 2; item--) {
-            
-        }
     }
 }
+
+
 
 function makeGrid(grid) {
     for (var list = 0; list < grid.length; list++) {
