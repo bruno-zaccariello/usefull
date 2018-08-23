@@ -9,6 +9,7 @@ def get_result():
         divs = get_divisors(i)
         if len(divs) % 2 == 0:
             for d in range(0,len(divs)-1,2):
+                # faz uma lista a partir de num + dois multiplicadores
                 test = list(int(x) for x in (str(i) + str(divs[d]) + str(divs[d+1])) )
                 if len(test) != order_len:
                     continue
